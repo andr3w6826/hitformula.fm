@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype</title>
+  <!-- Add your CSS links or <style> blocks here -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="writeup/writeup.html">Write‑Up</a>
+  </nav>
+  <header>
+    <h1>Hit Formula.fm</h1>
+    <p>Cracking the code behind chart-topping tracks</p>
+  </header>
+  <main>
+    <section>
+      <h2>🎶 What Makes a Hit?</h2>
+      <p>
+        This explorable explanation investigates the acoustic DNA of popular songs. We compare
+        tracks across popularity, danceability, energy, and more — all with a focus on
+        understanding how audio features drive chart performance.
+      </p>
+    </section>
+  </main>
+
+
+  <h1>Song Feature vs Popularity</h1>
+  <label for="featureSelect">Choose feature:&nbsp;</label>
+  <select id="featureSelect">
+    <option value="danceability">Danceability</option>
+    <option value="energy">Energy</option>
+    <option value="valence">Valence</option>
+    <option value="acousticness">Acousticness</option>
+    <option value="speechiness">Speechiness</option>
+  </select>
+
+  <div id="chart"></div>
+  <div id="tooltip"></div>
+
+
+  <h2>Compare Two Songs</h2>
+  <h5>Select 2 songs to compare audio features!</h5>
+  <label for="song1">Song 1:</label>
+  <input id="song1" type="text" placeholder="Enter first song name" />
+  <label for="song2">Song 2:</label>
+  <input id="song2" type="text" placeholder="Enter second song name" />
+  <button id="compareBtn">Compare</button>
+
+  <div id="compareChart"></div>
+
+  <!-- make sure this comes *after* the above elements -->
+  <script src="main.js"></script>
+</body>
+</html>
