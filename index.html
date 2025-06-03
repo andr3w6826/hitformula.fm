@@ -65,6 +65,28 @@
       <div id="compareChart"></div>
     </section>
 
+
+    <!-- Graph 3: Billboard vs. Non-Billboard Violin Plot -->
+<section class="scroll-section" id="violin-section">
+  <h2>🎻 What Makes a Hit... or Not?</h2>
+  <p>Do hit songs have a distinct audio fingerprint? Or do non-hits sound surprisingly similar?</p>
+  <label for="violinFeatureSelect">Select a feature to compare:</label>
+  <select id="violinFeatureSelect">
+    <option value="danceability">Danceability</option>
+    <option value="energy">Energy</option>
+    <option value="valence">Valence</option>
+    <option value="acousticness">Acousticness</option>
+    <option value="speechiness">Speechiness</option>
+  </select>
+  <div id="violinPlot"></div>
+</section>
+
+
+    
+
+
+
+
     <!-- Placeholder for future sections -->
     <section class="scroll-section">
       <h2>📊 Who Ruled the Charts?</h2>
@@ -87,5 +109,7 @@
   <!-- D3 + logic -->
   <script src="main.js"></script>
   <script src="viz1.js"></script>
+  <script src="violin.js"></script>
+
 </body>
 </html>
