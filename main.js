@@ -92,7 +92,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const tooltip = d3.select("#tooltip");
   let data;
-  const CSV_FILE = "sample.csv";
+  const CSV_FILE = "unique_songs.csv";
   const defaultSong1 = "Don't Hold Back";
   const defaultSong2 = "Love Myself";
   const input1 = document.getElementById("song1");
@@ -102,6 +102,7 @@ window.addEventListener("DOMContentLoaded", () => {
   d3.csv(CSV_FILE).then((rawData) => {
     data = rawData.map((d) => ({
       song_name: d.song_name,
+      artists: d.artists, 
       popularity: +d.popularity,
       danceability: +d.danceability,
       energy: +d.energy,
@@ -157,7 +158,13 @@ window.addEventListener("DOMContentLoaded", () => {
       .on("mouseover", (event, d) => {
         tooltip
           .style("opacity", 1)
-          .html(`<strong>${d.song_name}</strong><br>${feature}: ${d[feature]}<br>Popularity: ${d.popularity}`)
+          // .html(`<strong>${d.song_name}</strong><br>${feature}: ${d[feature]}<br>Popularity: ${d.popularity}`)
+          .html(`
+      <strong>${d.song_name}</strong><br>
+      <em>by ${d.artists}</em><br>
+      ${feature}: ${d[feature]}<br>
+      Popularity: ${d.popularity}
+    `)
           .style("left", event.pageX + 10 + "px")
           .style("top", event.pageY - 28 + "px");
       })
