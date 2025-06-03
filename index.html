@@ -101,6 +101,37 @@
       <div class="viz-placeholder">[Visualization: Interactive Quiz]</div>
     </section>
 
+
+    <section class="scroll-section" id="mood-selector">
+  <h2>🎯 Pick Your Mood</h2>
+  <p>Select a vibe to discover tracks tailored to that energy.</p>
+  <div class="mood-buttons">
+    <button data-mood="chill">😌 Chill Vibes</button>
+    <button data-mood="party">🕺 Party Mode</button>
+    <button data-mood="heartbreak">💔 Heartbreak</button>
+    <button data-mood="focus">🧠 Deep Focus</button>
+    <button data-mood="mainchar">😎 Main Character Energy</button>
+  </div>
+</section>
+
+<section class="scroll-section" id="track-swipe-section" style="display:none;">
+  <h2>🎶 Swipe Through Tracks</h2>
+  <div id="track-card" class="track-card"></div>
+  <div class="swipe-buttons">
+    <button id="dislikeBtn">❌</button>
+    <button id="likeBtn">❤️</button>
+  </div>
+</section>
+
+<section class="scroll-section" id="results-section" style="display:none;">
+  <h2>📊 Your Hit Formula</h2>
+  <div id="radar-chart"></div>
+  <p id="badge-name"></p>
+  <h3>Recommended for You</h3>
+  <ul id="recommendations"></ul>
+</section>
+
+
     <!-- Footer -->
     <footer class="scroll-section footer">
       <p>© HitFormula.fm • Inspired by Deezer, Spotify & Billboard</p>
@@ -111,6 +142,8 @@
   <script src="main.js"></script>
   <script src="viz1.js"></script>
   <script src="violin.js"></script>
+  <script src="tinder.js"></script>
+  <script src="radar.js"></script> 
 
 </body>
 </html>
