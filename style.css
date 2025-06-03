@@ -208,3 +208,67 @@ button#compareBtn:hover {
 .violin-legend svg {
   margin-right: 8px;
 }
+
+.mood-buttons button {
+  background: #1e1e1e;
+  color: #a259ff;
+  border: 1px solid #a259ff;
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.mood-buttons button:hover {
+  background: #a259ff;
+  color: white;
+}
+
+.track-card {
+  background: #181818;
+  border: 2px solid #444;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 60%;
+  margin: 2rem auto;
+  color: #eee;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.swipe-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.swipe-buttons button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #a259ff;
+  color: white;
+  cursor: pointer;
+}
+
+.swipe-left {
+  animation: swipeLeft 0.3s ease forwards;
+}
+
+.swipe-right {
+  animation: swipeRight 0.3s ease forwards;
+}
+
+@keyframes swipeLeft {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-150%) rotate(-10deg); opacity: 0; }
+}
+
+@keyframes swipeRight {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(150%) rotate(10deg); opacity: 0; }
+}
+
