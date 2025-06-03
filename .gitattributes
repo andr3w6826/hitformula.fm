@@ -1,3 +1,4 @@
 tracks_enriched.csv filter=lfs diff=lfs merge=lfs -text
 artists_enriched.csv filter=lfs diff=lfs merge=lfs -text
 songs_popularity.csv filter=lfs diff=lfs merge=lfs -text
+unique_songs.csv filter=lfs diff=lfs merge=lfs -text
