@@ -43,7 +43,7 @@ const violinCSV = "unique_songs.csv";
 
 d3.csv(violinCSV).then((rawData) => {
   const parsedData = rawData.map((d) => ({
-  is_billboard: d.is_billboard.toLowerCase() === "true",
+  is_billboard: String(d.is_billboard || "").toLowerCase() === "true",
   danceability: +d.danceability,
   energy: +d.energy,
   valence: +d.valence,
@@ -128,7 +128,9 @@ d3.csv(violinCSV).then((rawData) => {
             .on("mouseover", (event, d) => {
                 tooltipViolin
                 .style("opacity", 1)
-                .html(`<strong>Mean:</strong> ${d.toFixed(3)}`);
+                // .html(`<strong>Mean:</strong> ${d.toFixed(3)}`);
+                .html(`<strong>Mean:</strong> ${d !== undefined ? d.toFixed(3) : "N/A"}`);
+
             })
             .on("mousemove", (event) => {
                 tooltipViolin
@@ -157,7 +159,9 @@ d3.csv(violinCSV).then((rawData) => {
   .on("mouseover", (event, d) => {
     tooltipViolin
       .style("opacity", 1)
-      .html(`<strong>Median:</strong> ${d.toFixed(3)}`);
+      // .html(`<strong>Median:</strong> ${d.toFixed(3)}`);
+      .html(`<strong>Mean:</strong> ${d !== undefined ? d.toFixed(3) : "N/A"}`);
+
   })
   .on("mousemove", (event) => {
     tooltipViolin
