@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prototype</title>
-  <!-- Add your CSS links or <style> blocks here -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hit Formula.fm</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="writeup/writeup.html">Write‑Up</a>
-  </nav>
-  <header>
-    <h1>Hit Formula.fm</h1>
-    <p>Cracking the code behind chart-topping tracks</p>
-  </header>
-  <main>
-    <section>
-      <h2>🎶 What Makes a Hit?</h2>
+  <div class="scroll-container">
+    <!-- Hero Section -->
+    <section class="scroll-section hero" id="hero">
+      <svg id="parallax-bg"></svg>
+      <div class="hero-content">
+        <h1>Looking for a hit?</h1>
+        <p>Discover what makes songs rise to the top.</p>
+        <button class="cta-button" id="scroll-btn">Explore the formula</button>
+      </div>
+    </section>
+
+    <!-- Contextual Intro -->
+    <section class="scroll-section" id="section-1">
+      <h2>🎶 The Soundtrack of Our Lives</h2>
       <p>
         This explorable explanation investigates the acoustic DNA of popular songs. We compare
         tracks across popularity, danceability, energy, and more — all with a focus on
         understanding how audio features drive chart performance.
       </p>
+      <div class="viz-placeholder">[Visualization: Rise of the Hit]</div>
     </section>
-  </main>
 
+    <!-- Graph 1: Feature vs Popularity -->
+    <section class="scroll-section">
+      <h2>📈 Song Feature vs Popularity</h2>
+      <label for="featureSelect">Choose feature:&nbsp;</label>
+      <select id="featureSelect">
+        <option value="danceability">Danceability</option>
+        <option value="energy">Energy</option>
+        <option value="valence">Valence</option>
+        <option value="acousticness">Acousticness</option>
+        <option value="speechiness">Speechiness</option>
+      </select>
+      <div id="chart"></div>
+      <div id="tooltip"></div>
+    </section>
 
-  <h1>Song Feature vs Popularity</h1>
-  <label for="featureSelect">Choose feature:&nbsp;</label>
-  <select id="featureSelect">
-    <option value="danceability">Danceability</option>
-    <option value="energy">Energy</option>
-    <option value="valence">Valence</option>
-    <option value="acousticness">Acousticness</option>
-    <option value="speechiness">Speechiness</option>
-  </select>
+    <!-- Graph 2: Compare Two Songs -->
+    <section class="scroll-section">
+      <h2>🎧 Compare Two Songs</h2>
+      <p>Select 2 songs to compare audio features!</p>
+      <label for="song1">Song 1:</label>
+      <input id="song1" type="text" placeholder="Enter first song name" />
+      <label for="song2">Song 2:</label>
+      <input id="song2" type="text" placeholder="Enter second song name" />
+      <button id="compareBtn">Compare</button>
+      <div id="compareChart"></div>
+    </section>
 
-  <div id="chart"></div>
-  <div id="tooltip"></div>
+    <!-- Placeholder for future sections -->
+    <section class="scroll-section">
+      <h2>📊 Who Ruled the Charts?</h2>
+      <p>Watch the top 10 artists by chart presence from 1954 onward.</p>
+      <div class="viz-placeholder">[Visualization: Bar Chart Race]</div>
+    </section>
 
+    <section class="scroll-section">
+      <h2>🎛 Your Hit Formula</h2>
+      <p>Tune your taste. Explore your hit profile.</p>
+      <div class="viz-placeholder">[Visualization: Interactive Quiz]</div>
+    </section>
 
-  <h2>Compare Two Songs</h2>
-  <h5>Select 2 songs to compare audio features!</h5>
-  <label for="song1">Song 1:</label>
-  <input id="song1" type="text" placeholder="Enter first song name" />
-  <label for="song2">Song 2:</label>
-  <input id="song2" type="text" placeholder="Enter second song name" />
-  <button id="compareBtn">Compare</button>
+    <!-- Footer -->
+    <footer class="scroll-section footer">
+      <p>© HitFormula.fm • Inspired by Deezer, Spotify & Billboard</p>
+    </footer>
+  </div>
 
-  <div id="compareChart"></div>
-
-  <!-- make sure this comes *after* the above elements -->
+  <!-- D3 + logic -->
   <script src="main.js"></script>
 </body>
 </html>
