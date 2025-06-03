@@ -241,98 +241,98 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // main.js
-import { generateRadarChart } from './radar.js';
+//   // main.js
+// import { generateRadarChart } from './radar.js';
 
-const moodSongs = {
-  chill: [...], // placeholder for 10 curated songs
-  party: [...],
-  heartbreak: [...],
-  focus: [...],
-  mainCharacter: [...]
-};
+// const moodSongs = {
+//   chill: [...], // placeholder for 10 curated songs
+//   party: [...],
+//   heartbreak: [...],
+//   focus: [...],
+//   mainCharacter: [...]
+// };
 
-let selectedMood = null;
-let swipeIndex = 0;
-let likedSongs = [];
+// let selectedMood = null;
+// let swipeIndex = 0;
+// let likedSongs = [];
 
-function startMoodSelection(mood) {
-  selectedMood = mood;
-  swipeIndex = 0;
-  likedSongs = [];
-  displayNextSong();
-}
+// function startMoodSelection(mood) {
+//   selectedMood = mood;
+//   swipeIndex = 0;
+//   likedSongs = [];
+//   displayNextSong();
+// }
 
-function displayNextSong() {
-  const song = moodSongs[selectedMood][swipeIndex];
-  if (!song) return;
+// function displayNextSong() {
+//   const song = moodSongs[selectedMood][swipeIndex];
+//   if (!song) return;
 
-  const card = document.getElementById("song-card");
-  card.className = "";
-  card.innerHTML = `
-    <h2>${song.title}</h2>
-    <p>${song.artist}</p>
-    <p><em>${song.vibe}</em></p>
-  `;
-}
+//   const card = document.getElementById("song-card");
+//   card.className = "";
+//   card.innerHTML = `
+//     <h2>${song.title}</h2>
+//     <p>${song.artist}</p>
+//     <p><em>${song.vibe}</em></p>
+//   `;
+// }
 
-function swipe(direction) {
-  const card = document.getElementById("song-card");
-  card.classList.add(direction === "right" ? "swipe-right" : "swipe-left");
+// function swipe(direction) {
+//   const card = document.getElementById("song-card");
+//   card.classList.add(direction === "right" ? "swipe-right" : "swipe-left");
 
-  setTimeout(() => {
-    const song = moodSongs[selectedMood][swipeIndex];
-    if (direction === "right") {
-      likedSongs.push(song);
-    }
+//   setTimeout(() => {
+//     const song = moodSongs[selectedMood][swipeIndex];
+//     if (direction === "right") {
+//       likedSongs.push(song);
+//     }
 
-    swipeIndex++;
-    if (swipeIndex < 5) {
-      displayNextSong();
-    } else {
-      showRadarAndRecommendations();
-    }
-  }, 300);
-}
+//     swipeIndex++;
+//     if (swipeIndex < 5) {
+//       displayNextSong();
+//     } else {
+//       showRadarAndRecommendations();
+//     }
+//   }, 300);
+// }
 
-function showRadarAndRecommendations() {
-  const avgFeatures = calculateAverageFeatures(likedSongs);
-  document.getElementById("song-card").style.display = "none";
-  generateRadarChart("results-container", avgFeatures);
-  displayRecommendations(likedSongs);
-}
+// function showRadarAndRecommendations() {
+//   const avgFeatures = calculateAverageFeatures(likedSongs);
+//   document.getElementById("song-card").style.display = "none";
+//   generateRadarChart("results-container", avgFeatures);
+//   displayRecommendations(likedSongs);
+// }
 
-function calculateAverageFeatures(songs) {
-  const keys = ["danceability", "energy", "valence", "acousticness", "speechiness"];
-  const sums = keys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {});
+// function calculateAverageFeatures(songs) {
+//   const keys = ["danceability", "energy", "valence", "acousticness", "speechiness"];
+//   const sums = keys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {});
 
-  songs.forEach(song => {
-    keys.forEach(key => {
-      sums[key] += parseFloat(song[key]);
-    });
-  });
+//   songs.forEach(song => {
+//     keys.forEach(key => {
+//       sums[key] += parseFloat(song[key]);
+//     });
+//   });
 
-  return keys.reduce((acc, key) => ({
-    ...acc,
-    [key]: sums[key] / songs.length
-  }), {});
-}
+//   return keys.reduce((acc, key) => ({
+//     ...acc,
+//     [key]: sums[key] / songs.length
+//   }), {});
+// }
 
-function displayRecommendations(songs) {
-  // Display 5 mock recommendations below radar chart
-  const container = document.getElementById("recommendations");
-  container.innerHTML = `<h3>Your Hit Type: The Chill Dreamer</h3>`;
-  songs.slice(0, 5).forEach(song => {
-    container.innerHTML += `<p>${song.title} — ${song.artist}</p>`;
-  });
-}
+// function displayRecommendations(songs) {
+//   // Display 5 mock recommendations below radar chart
+//   const container = document.getElementById("recommendations");
+//   container.innerHTML = `<h3>Your Hit Type: The Chill Dreamer</h3>`;
+//   songs.slice(0, 5).forEach(song => {
+//     container.innerHTML += `<p>${song.title} — ${song.artist}</p>`;
+//   });
+// }
 
-// Attach event listeners
-const hearts = document.querySelectorAll(".heart-button");
-hearts.forEach(btn => btn.addEventListener("click", () => swipe("right")));
-const skips = document.querySelectorAll(".skip-button");
-skips.forEach(btn => btn.addEventListener("click", () => swipe("left")));
+// // Attach event listeners
+// const hearts = document.querySelectorAll(".heart-button");
+// hearts.forEach(btn => btn.addEventListener("click", () => swipe("right")));
+// const skips = document.querySelectorAll(".skip-button");
+// skips.forEach(btn => btn.addEventListener("click", () => swipe("left")));
 
-// Call startMoodSelection("chill") or similar on mood button click
+// // Call startMoodSelection("chill") or similar on mood button click
 
 });
