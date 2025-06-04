@@ -174,8 +174,12 @@ window.addEventListener("DOMContentLoaded", () => {
   function triggerComparison() {
     const name1 = (input1.value || defaultSong1).trim().toLowerCase();
     const name2 = (input2.value || defaultSong2).trim().toLowerCase();
-    const songA = data.find((d) => d.song_name.toLowerCase().includes(name1));
-    const songB = data.find((d) => d.song_name.toLowerCase().includes(name2));
+    // const songA = data.find((d) => d.song_name.toLowerCase().includes(name1));
+    // const songB = data.find((d) => d.song_name.toLowerCase().includes(name2));
+    const songA = data.find((d) => d.song_name && d.song_name.toLowerCase().includes(name1));
+const songB = data.find((d) => d.song_name && d.song_name.toLowerCase().includes(name2));
+
+    
 
     if (!songA || !songB) {
       d3.select("#compareChart").html(`<p style="text-align:center;color:#888;">Enter two valid songs to compare.</p>`);
