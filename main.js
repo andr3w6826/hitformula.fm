@@ -1,8 +1,8 @@
 // main.js
 
 const svg = d3.select("#parallax-bg");
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = document.documentElement.clientWidth;
+const height = document.documentElement.clientHeight;
 
 svg.attr("width", width).attr("height", height);
 
