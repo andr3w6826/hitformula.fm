@@ -1,8 +1,8 @@
 // main.js
 
 const svg = d3.select("#parallax-bg");
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = document.documentElement.clientWidth;
+const height = document.documentElement.clientHeight;
 
 svg.attr("width", width).attr("height", height);
 
@@ -100,6 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const compareBtn = document.getElementById("compareBtn");
 
   d3.csv(CSV_FILE).then((rawData) => {
+    console.log("Raw data preview:", rawData.slice(0, 5));  // Debug line
     data = rawData.map((d) => ({
       song_name: d.song_name,
       artists: d.artists, 
@@ -174,8 +175,12 @@ window.addEventListener("DOMContentLoaded", () => {
   function triggerComparison() {
     const name1 = (input1.value || defaultSong1).trim().toLowerCase();
     const name2 = (input2.value || defaultSong2).trim().toLowerCase();
-    const songA = data.find((d) => d.song_name.toLowerCase().includes(name1));
-    const songB = data.find((d) => d.song_name.toLowerCase().includes(name2));
+    // const songA = data.find((d) => d.song_name.toLowerCase().includes(name1));
+    // const songB = data.find((d) => d.song_name.toLowerCase().includes(name2));
+    const songA = data.find((d) => d.song_name && d.song_name.toLowerCase().includes(name1));
+const songB = data.find((d) => d.song_name && d.song_name.toLowerCase().includes(name2));
+
+    
 
     if (!songA || !songB) {
       d3.select("#compareChart").html(`<p style="text-align:center;color:#888;">Enter two valid songs to compare.</p>`);

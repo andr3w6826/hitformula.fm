@@ -21,10 +21,9 @@
 
     <!-- Contextual Intro -->
     <section class="scroll-section" id="section-1">
-      
-      <h2>📊 Who Ruled the Charts?</h2>
-      <p>Watch the top 10 artists by chart presence from 1954 onward.</p>
-    
+      <h2>📊 Who Ruled the Charts??</h2>
+      <p>Watch the top 10 artists by chart presence from 1954 onward.
+      </p>
       <div style="display: flex; align-items: flex-start; width: 100%;">
 
         <!-- Chart container: 70% -->
@@ -37,7 +36,7 @@
       
     </section>
 
-    <!-- Graph 1: Feature vs Popularity -->
+<!-- 
     <section class="scroll-section">
       <h2>📈 Song Feature vs Popularity</h2>
       <label for="featureSelect">Choose feature:&nbsp;</label>
@@ -52,7 +51,7 @@
       <div id="tooltip"></div>
     </section>
 
-    <!-- Graph 2: Compare Two Songs -->
+
     <section class="scroll-section">
       <h2>🎧 Compare Two Songs</h2>
       <p>Select 2 songs to compare audio features!</p>
@@ -62,41 +61,29 @@
       <input id="song2" type="text" placeholder="Enter second song name" />
       <button id="compareBtn">Compare</button>
       <div id="compareChart"></div>
-    </section>
+    </section> -->
 
 
     <!-- Graph 3: Billboard vs. Non-Billboard Violin Plot -->
-    <section class="scroll-section" id="violin-section">
-      <h2>🎻 What Makes a Hit... or Not?</h2>
-      <p>Do hit songs have a distinct audio fingerprint? Or do non-hits sound surprisingly similar?</p>
-      <label for="violinFeatureSelect">Select a feature to compare:</label>
-      <select id="violinFeatureSelect">
-        <option value="danceability">Danceability</option>
-        <option value="energy">Energy</option>
-        <option value="valence">Valence</option>
-        <option value="acousticness">Acousticness</option>
-        <option value="speechiness">Speechiness</option>
-      </select>
-      <div id="violinPlot"></div>
-      <div id="violin-tooltip" style="position: absolute; opacity: 0; pointer-events: none; background: rgba(0,0,0,0.8); color: white; padding: 6px 8px; border-radius: 4px; font-size: 12px;"></div>
-    </section>
-
-    <!-- Graph 4: Anatomy of a Hit -->
-    <section class="scroll-section" id="anatomy-section">
-      <h2>🧬 Anatomy of a Hit Song</h2>
-      <p>Explore the signature patterns of hit songs using their audio features.</p>
-      <div id="parallel-coords"></div>
-    </section>
-
+<section class="scroll-section" id="violin-section">
+  <h2>🎻 What Makes a Hit... or Not?</h2>
+  <p>Do hit songs have a distinct audio fingerprint? Or do non-hits sound surprisingly similar?</p>
+  <label for="violinFeatureSelect">Select a feature to compare:</label>
+  <select id="violinFeatureSelect">
+    <option value="danceability">Danceability</option>
+    <option value="energy">Energy</option>
+    <option value="valence">Valence</option>
+    <option value="acousticness">Acousticness</option>
+    <option value="speechiness">Speechiness</option>
+  </select>
+  <div id="violinPlot"></div>
+  <div id="violin-tooltip" style="position: absolute; opacity: 0; pointer-events: none; background: rgba(0,0,0,0.8); color: white; padding: 6px 8px; border-radius: 4px; font-size: 12px;"></div>
+</section>
 
     <!-- Placeholder for future sections -->
-    <section class="scroll-section">
-      <h2>🎶 The Soundtrack of Our Lives</h2>
-      <p>
-        This explorable explanation investigates the acoustic DNA of popular songs. We compare
-        tracks across popularity, danceability, energy, and more — all with a focus on
-        understanding how audio features drive chart performance.
-      </p>
+    <!-- <section class="scroll-section">
+      <h2>📊 Who Ruled the Charts?</h2>
+      <p>Watch the top 10 artists by chart presence from 1954 onward.</p>
       <div class="viz-placeholder">[Visualization: Bar Chart Race]</div>
     </section>
 
@@ -104,7 +91,12 @@
       <h2>🎛 Your Hit Formula</h2>
       <p>Tune your taste. Explore your hit profile.</p>
       <div class="viz-placeholder">[Visualization: Interactive Quiz]</div>
-    </section>
+    </section> -->
+    <!-- <section class="scroll-section" id="anatomy-section">
+      <h2>📊 Anatomy of a Hit</h2>
+      <p>Explore how different audio features interact in hit songs.</p>
+      <div id="parallel-coords"></div>
+    </section> -->
 
 
     <section class="scroll-section" id="mood-selector">
@@ -139,7 +131,7 @@
 
     <!-- Footer -->
     <footer class="scroll-section footer">
-      <p>© HitFormula.fm • Inspired by Deezer, Spotify & Billboard</p>
+      <p>© HitFormula.fm •</p>
     </footer>
   </div>
 
@@ -149,6 +141,7 @@
   <script src="violin.js"></script>
   <script src="tinder.js"></script>
   <script src="radar.js"></script> 
+  <script src="anatomy.js"></script> 
 
 </body>
 </html>
