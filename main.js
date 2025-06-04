@@ -100,6 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const compareBtn = document.getElementById("compareBtn");
 
   d3.csv(CSV_FILE).then((rawData) => {
+    console.log("Raw data preview:", rawData.slice(0, 5));  // Debug line
     data = rawData.map((d) => ({
       song_name: d.song_name,
       artists: d.artists, 
